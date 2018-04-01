@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.636,C:\Users\Erlan\Documents\RAD Studio\Projects\uMain.pas=C:\Users\Erlan\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.636,C:\Users\Erlan\Documents\RAD Studio\Projects\uMain.dfm=C:\Users\Erlan\Documents\RAD Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.440,=C:\Users\Erlan\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.449,C:\Users\Erlan\Documents\RAD Studio\Projects\SensorModel.dproj=C:\Users\Erlan\Documents\RAD Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
