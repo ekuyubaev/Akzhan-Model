@@ -1,9 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.449,C:\Users\Erlan\Documents\RAD Studio\Projects\SensorModel.dproj=C:\Users\Erlan\Documents\RAD Studio\Projects\Project1.dproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.636,C:\Users\Erlan\Documents\RAD Studio\Projects\uMain.pas=C:\Users\Erlan\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.636,C:\Users\Erlan\Documents\RAD Studio\Projects\uMain.dfm=C:\Users\Erlan\Documents\RAD Studio\Projects\Unit1.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.440,=C:\Users\Erlan\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.449,C:\Users\Erlan\Documents\RAD Studio\Projects\SensorModel.dproj=C:\Users\Erlan\Documents\RAD Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2018.04.02 22:08:41.845,=D:\projects\Akzhan\Model CPPN\Unit1.pas</Transaction>
+    <Transaction>2018.04.02 22:09:01.951,D:\projects\Akzhan\Model CPPN\uDM.dfm=D:\projects\Akzhan\Model CPPN\Unit1.dfm</Transaction>
+    <Transaction>2018.04.02 22:09:01.951,D:\projects\Akzhan\Model CPPN\uDM.pas=D:\projects\Akzhan\Model CPPN\Unit1.pas</Transaction>
   </Transactions>
 </BorlandProject>

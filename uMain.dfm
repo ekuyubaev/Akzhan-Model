@@ -23,27 +23,165 @@ object frmMain: TfrmMain
     Top = 0
     Width = 810
     Height = 585
-    ActivePage = tsSchema
+    ActivePage = tsParameters
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 764
-    ExplicitHeight = 492
     object tsParameters: TTabSheet
       Caption = 'tsParameters'
-      ExplicitWidth = 756
-      ExplicitHeight = 464
+      object GroupBox1: TGroupBox
+        Left = 0
+        Top = 0
+        Width = 305
+        Height = 557
+        Align = alLeft
+        Caption = #1042#1099#1073#1086#1088' '#1076#1072#1090#1095#1080#1082#1072
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+        object DBComboBoxEh1: TDBComboBoxEh
+          Left = 24
+          Top = 40
+          Width = 249
+          Height = 21
+          DataField = 'Naimenovanie'
+          DataSource = dm.dsSensor
+          DynProps = <>
+          EditButtons = <>
+          ReadOnly = True
+          TabOrder = 0
+          Visible = True
+        end
+      end
+      object GroupBox2: TGroupBox
+        Left = 305
+        Top = 0
+        Width = 497
+        Height = 557
+        Align = alClient
+        Caption = #1055#1072#1088#1072#1084#1077#1090#1088#1099' '#1076#1072#1090#1095#1080#1082#1072
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 1
+        ExplicitLeft = 344
+        ExplicitWidth = 458
+        object Label1: TLabel
+          Left = 40
+          Top = 40
+          Width = 276
+          Height = 13
+          Caption = #1057#1088#1077#1076#1085#1077#1077' '#1079#1085#1072#1095#1077#1085#1080#1077' '#1087#1088#1080#1088#1072#1097#1077#1085#1080#1103' '#1087#1086#1082#1072#1079#1072#1085#1080#1103' (Mx)'
+        end
+        object Label2: TLabel
+          Left = 40
+          Top = 95
+          Width = 289
+          Height = 13
+          Caption = #1057#1088#1077#1076#1085#1077#1077' '#1086#1090#1082#1083#1086#1085#1077#1085#1080#1077' '#1087#1088#1080#1088#1072#1097#1077#1085#1080#1103' '#1087#1086#1082#1072#1079#1072#1085#1080#1103' (Dx)'
+        end
+        object Label3: TLabel
+          Left = 40
+          Top = 216
+          Width = 70
+          Height = 13
+          Caption = #1055#1088#1080#1084#1077#1095#1072#1085#1080#1077
+        end
+        object Label4: TLabel
+          Left = 40
+          Top = 152
+          Width = 128
+          Height = 13
+          Caption = #1053#1072#1095#1072#1083#1100#1085#1086#1077' '#1087#1086#1082#1072#1079#1072#1085#1080#1077
+        end
+        object DBEditEh1: TDBEditEh
+          Left = 40
+          Top = 59
+          Width = 128
+          Height = 21
+          DataField = 'Mx'
+          DataSource = dm.dsParameter
+          DynProps = <>
+          EditButtons = <>
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 0
+          Visible = True
+        end
+        object DBEditEh2: TDBEditEh
+          Left = 40
+          Top = 114
+          Width = 128
+          Height = 21
+          DataField = 'Dx'
+          DataSource = dm.dsParameter
+          DynProps = <>
+          EditButtons = <>
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 1
+          Visible = True
+        end
+        object DBMemoEh1: TDBMemoEh
+          Left = 40
+          Top = 235
+          Width = 425
+          Height = 89
+          AutoSize = False
+          DataField = 'Primechanie'
+          DataSource = dm.dsParameter
+          DynProps = <>
+          EditButtons = <>
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 2
+          Visible = True
+        end
+        object DBEditEh3: TDBEditEh
+          Left = 40
+          Top = 171
+          Width = 128
+          Height = 21
+          DataField = 'Pokazanie'
+          DataSource = dm.dsParameter
+          DynProps = <>
+          EditButtons = <>
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 3
+          Visible = True
+        end
+      end
     end
     object tsSensorsChoice: TTabSheet
       Caption = 'tsSensorsChoice'
       ImageIndex = 1
-      ExplicitWidth = 756
-      ExplicitHeight = 464
     end
     object tsSchema: TTabSheet
       Caption = 'tsSchema'
       ImageIndex = 2
-      ExplicitWidth = 756
-      ExplicitHeight = 464
       object Image1: TImage
         Left = 0
         Top = 0
@@ -1662,6 +1800,34 @@ object frmMain: TfrmMain
         ExplicitTop = 152
         ExplicitWidth = 105
         ExplicitHeight = 105
+      end
+      object Edit1: TEdit
+        Left = 118
+        Top = 296
+        Width = 32
+        Height = 13
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -8
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 0
+        Text = 'Edit1'
+      end
+      object Edit2: TEdit
+        Left = 311
+        Top = 256
+        Width = 32
+        Height = 13
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -8
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 1
+        Text = 'Edit2'
       end
     end
   end
