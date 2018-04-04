@@ -40,7 +40,7 @@ object dm: Tdm
         DataType = ftInteger
         NumericScale = 16
         Precision = 255
-        Value = Null
+        Value = 1
       end>
     SQL.Strings = (
       'Select * From Model'
@@ -66,6 +66,9 @@ object dm: Tdm
     object qParameterPrimechanie: TWideMemoField
       FieldName = 'Primechanie'
       BlobType = ftWideMemo
+    end
+    object qParameteractive: TSmallintField
+      FieldName = 'active'
     end
   end
   object dsParameter: TDataSource

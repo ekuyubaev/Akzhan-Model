@@ -18,6 +18,7 @@ type
     qParameterDx: TFloatField;
     qParameterPokazanie: TFloatField;
     qParameterPrimechanie: TWideMemoField;
+    qParameteractive: TSmallintField;
   private
     { Private declarations }
   public

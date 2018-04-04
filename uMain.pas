@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.Menus,
   Vcl.Imaging.jpeg, Vcl.ExtCtrls, Vcl.StdCtrls, DBGridEh, DBCtrlsEh, Vcl.Mask,
-  DBLookupEh;
+  DBLookupEh, DBGridEhGrouping, ToolCtrlsEh, DBGridEhToolCtrls, DynVarsEh,
+  EhLibVCL, GridsEh, DBAxisGridsEh;
 
 type
   TfrmMain = class(TForm)
@@ -34,7 +35,8 @@ type
     Label4: TLabel;
     DBEditEh3: TDBEditEh;
     Edit2: TEdit;
-    DBComboBoxEh1: TDBComboBoxEh;
+    DBGridEh1: TDBGridEh;
+    DBCheckBoxEh1: TDBCheckBoxEh;
     procedure N5Click(Sender: TObject);
     procedure N2Click(Sender: TObject);
     procedure N3Click(Sender: TObject);
