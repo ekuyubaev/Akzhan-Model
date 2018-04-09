@@ -3,7 +3,8 @@ program SensorModel;
 uses
   Vcl.Forms,
   uMain in 'uMain.pas' {frmMain},
-  uDM in 'uDM.pas' {dm: TDataModule};
+  uDM in 'uDM.pas' {dm: TDataModule},
+  uDatchik in 'uDatchik.pas';
 
 {$R *.res}
 

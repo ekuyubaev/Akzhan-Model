@@ -4,8 +4,8 @@ object frmMain: TfrmMain
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = #1052#1086#1076#1077#1083#1080#1088#1086#1074#1072#1085#1080#1077' '#1087#1086#1082#1072#1079#1072#1085#1080#1081' '#1076#1072#1090#1095#1080#1082#1086#1074
-  ClientHeight = 585
-  ClientWidth = 810
+  ClientHeight = 640
+  ClientWidth = 854
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,22 +16,26 @@ object frmMain: TfrmMain
   OldCreateOrder = False
   Position = poDesktopCenter
   OnActivate = FormActivate
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object PageControl1: TPageControl
     Left = 0
     Top = 0
-    Width = 810
-    Height = 585
-    ActivePage = tsParameters
+    Width = 854
+    Height = 640
+    ActivePage = tsSchema
     Align = alClient
+    Style = tsFlatButtons
     TabOrder = 0
     object tsParameters: TTabSheet
-      Caption = 'tsParameters'
+      Caption = #1055#1072#1088#1072#1084#1077#1090#1088#1099' '#1084#1086#1076#1077#1083#1080#1088#1086#1074#1072#1085#1080#1103
+      ExplicitWidth = 802
+      ExplicitHeight = 554
       object GroupBox1: TGroupBox
         Left = 0
         Top = 0
-        Width = 802
+        Width = 846
         Height = 321
         Align = alTop
         Caption = #1042#1099#1073#1086#1088' '#1076#1072#1090#1095#1080#1082#1072
@@ -42,10 +46,11 @@ object frmMain: TfrmMain
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 0
+        ExplicitWidth = 802
         object DBGridEh1: TDBGridEh
           Left = 2
           Top = 15
-          Width = 798
+          Width = 842
           Height = 304
           Align = alClient
           AutoFitColWidths = True
@@ -213,8 +218,8 @@ object frmMain: TfrmMain
       object GroupBox2: TGroupBox
         Left = 0
         Top = 321
-        Width = 802
-        Height = 236
+        Width = 846
+        Height = 288
         Align = alClient
         Caption = #1055#1072#1088#1072#1084#1077#1090#1088#1099' '#1076#1072#1090#1095#1080#1082#1072
         Font.Charset = DEFAULT_CHARSET
@@ -224,23 +229,21 @@ object frmMain: TfrmMain
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 1
-        ExplicitLeft = 305
-        ExplicitTop = 216
-        ExplicitWidth = 497
-        ExplicitHeight = 341
+        ExplicitWidth = 802
+        ExplicitHeight = 233
         object Label1: TLabel
           Left = 24
           Top = 32
-          Width = 177
-          Height = 29
+          Width = 165
+          Height = 26
           Caption = #1057#1088#1077#1076#1085#1077#1077' '#1079#1085#1072#1095#1077#1085#1080#1077' '#1087#1088#1080#1088#1072#1097#1077#1085#1080#1103' '#1087#1086#1082#1072#1079#1072#1085#1080#1103' (Mx)'
           WordWrap = True
         end
         object Label2: TLabel
           Left = 24
           Top = 96
-          Width = 177
-          Height = 31
+          Width = 163
+          Height = 26
           Caption = #1057#1088#1077#1076#1085#1077#1077' '#1086#1090#1082#1083#1086#1085#1077#1085#1080#1077' '#1087#1088#1080#1088#1072#1097#1077#1085#1080#1103' '#1087#1086#1082#1072#1079#1072#1085#1080#1103' (Dx)'
           WordWrap = True
         end
@@ -257,6 +260,13 @@ object frmMain: TfrmMain
           Width = 128
           Height = 13
           Caption = #1053#1072#1095#1072#1083#1100#1085#1086#1077' '#1087#1086#1082#1072#1079#1072#1085#1080#1077
+        end
+        object Label5: TLabel
+          Left = 392
+          Top = 32
+          Width = 161
+          Height = 13
+          Caption = #1053#1086#1084#1077#1088' '#1082#1086#1084#1087#1086#1085#1077#1085#1090#1072' '#1074#1099#1074#1086#1076#1072
         end
         object DBEditEh1: TDBEditEh
           Left = 24
@@ -337,25 +347,47 @@ object frmMain: TfrmMain
           Width = 97
           Height = 17
           Caption = #1040#1050#1058#1048#1042#1045#1053
-          DataField = 'active'
+          DataField = 'Active'
           DataSource = dm.dsParameter
           DynProps = <>
           TabOrder = 4
+          ValueChecked = '1'
+          ValueUnchecked = '0'
+        end
+        object DBEditEh4: TDBEditEh
+          Left = 392
+          Top = 51
+          Width = 161
+          Height = 21
+          Alignment = taCenter
+          DataField = 'NomerEdit'
+          DataSource = dm.dsParameter
+          DynProps = <>
+          EditButtons = <>
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 5
+          Visible = True
         end
       end
     end
-    object tsSensorsChoice: TTabSheet
-      Caption = 'tsSensorsChoice'
-      ImageIndex = 1
-    end
     object tsSchema: TTabSheet
-      Caption = 'tsSchema'
+      Caption = #1058#1077#1093#1085#1086#1083#1086#1075#1080#1095#1077#1089#1082#1072#1103' '#1089#1093#1077#1084#1072
       ImageIndex = 2
+      ExplicitWidth = 802
+      ExplicitHeight = 554
+      DesignSize = (
+        846
+        609)
       object Image1: TImage
         Left = 0
         Top = 0
-        Width = 802
-        Height = 557
+        Width = 846
+        Height = 609
         Align = alClient
         Picture.Data = {
           0A544A504547496D61676588C80000FFD8FFE000104A46494600010101006000
@@ -1971,13 +2003,14 @@ object frmMain: TfrmMain
         ExplicitHeight = 105
       end
       object Edit1: TEdit
-        Left = 118
-        Top = 296
-        Width = 32
+        Left = 126
+        Top = 321
+        Width = 38
         Height = 18
+        Anchors = [akLeft, akRight, akBottom]
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -8
+        Font.Height = -9
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
@@ -1985,13 +2018,14 @@ object frmMain: TfrmMain
         Text = 'Edit1'
       end
       object Edit2: TEdit
-        Left = 311
-        Top = 256
-        Width = 32
+        Left = 339
+        Top = 278
+        Width = 38
         Height = 18
+        Anchors = [akLeft, akRight, akBottom]
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
-        Font.Height = -8
+        Font.Height = -9
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
@@ -2005,20 +2039,13 @@ object frmMain: TfrmMain
     Top = 40
     object N1: TMenuItem
       Caption = #1052#1086#1076#1077#1083#1080#1088#1086#1074#1072#1085#1080#1077
-      object N2: TMenuItem
-        Caption = #1047#1072#1076#1072#1085#1080#1077' '#1087#1072#1088#1072#1084#1077#1090#1088#1086#1074' '#1084#1086#1076#1077#1083#1080#1088#1086#1074#1072#1085#1080#1103
-        OnClick = N2Click
-      end
       object N3: TMenuItem
         Caption = #1047#1072#1087#1091#1089#1082' '#1084#1086#1076#1077#1083#1080#1088#1086#1074#1072#1085#1080#1103
         OnClick = N3Click
       end
       object N4: TMenuItem
-        Caption = #1054#1089#1090#1072#1085#1086#1074#1082#1072' '#1084#1086#1076#1077#1083#1080#1088#1086#1074#1072#1085#1080#1103
-      end
-      object N6: TMenuItem
-        Caption = #1058#1077#1093#1085#1086#1083#1086#1075#1080#1095#1077#1089#1082#1072#1103' '#1089#1093#1077#1084#1072
-        OnClick = N6Click
+        Caption = #1047#1072#1074#1077#1088#1096#1077#1085#1080#1077' '#1084#1086#1076#1077#1083#1080#1088#1086#1074#1072#1085#1080#1103
+        OnClick = N4Click
       end
     end
     object N5: TMenuItem

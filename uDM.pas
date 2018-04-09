@@ -18,7 +18,9 @@ type
     qParameterDx: TFloatField;
     qParameterPokazanie: TFloatField;
     qParameterPrimechanie: TWideMemoField;
-    qParameteractive: TSmallintField;
+    qParameterNomerEdit: TIntegerField;
+    qTemp: TADOQuery;
+    qParameterActive: TSmallintField;
   private
     { Private declarations }
   public

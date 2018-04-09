@@ -1,6 +1,6 @@
 object dm: Tdm
   OldCreateOrder = False
-  Height = 187
+  Height = 209
   Width = 307
   object DB_GATE: TADOConnection
     Connected = True
@@ -67,13 +67,22 @@ object dm: Tdm
       FieldName = 'Primechanie'
       BlobType = ftWideMemo
     end
-    object qParameteractive: TSmallintField
-      FieldName = 'active'
+    object qParameterNomerEdit: TIntegerField
+      FieldName = 'NomerEdit'
+    end
+    object qParameterActive: TSmallintField
+      FieldName = 'Active'
     end
   end
   object dsParameter: TDataSource
     DataSet = qParameter
     Left = 176
     Top = 72
+  end
+  object qTemp: TADOQuery
+    Connection = DB_GATE
+    Parameters = <>
+    Left = 112
+    Top = 128
   end
 end

@@ -13,15 +13,12 @@ type
   TfrmMain = class(TForm)
     MainMenu1: TMainMenu;
     N1: TMenuItem;
-    N2: TMenuItem;
     N3: TMenuItem;
     N4: TMenuItem;
     N5: TMenuItem;
     PageControl1: TPageControl;
     tsParameters: TTabSheet;
-    tsSensorsChoice: TTabSheet;
     tsSchema: TTabSheet;
-    N6: TMenuItem;
     Image1: TImage;
     GroupBox1: TGroupBox;
     GroupBox2: TGroupBox;
@@ -37,13 +34,16 @@ type
     Edit2: TEdit;
     DBGridEh1: TDBGridEh;
     DBCheckBoxEh1: TDBCheckBoxEh;
+    Label5: TLabel;
+    DBEditEh4: TDBEditEh;
     procedure N5Click(Sender: TObject);
-    procedure N2Click(Sender: TObject);
-    procedure N3Click(Sender: TObject);
-    procedure N6Click(Sender: TObject);
     procedure FormActivate(Sender: TObject);
+    procedure N3Click(Sender: TObject);
+    procedure N4Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
+    sensorCount :integer;
   public
     { Public declarations }
   end;
@@ -55,35 +55,89 @@ implementation
 
 {$R *.dfm}
 
-uses uDM;
+uses uDM, uDatchik;
+const N = 20;
+
+var datchiki: array of TDatchik;
 
 procedure TfrmMain.FormActivate(Sender: TObject);
 begin
-  tsSchema.TabVisible := false;
-  tsParameters.TabVisible := false;
-  tsSensorsChoice.TabVisible := false;
+  Edit1.Visible := false;
+  Edit2.Visible := false;
+
   tsSchema.Show;
   dm.connect;
 end;
 
-procedure TfrmMain.N2Click(Sender: TObject);
+procedure TfrmMain.FormCreate(Sender: TObject);
 begin
-  tsParameters.Show;
+  sensorCount := -1;
 end;
 
 procedure TfrmMain.N3Click(Sender: TObject);
+var i : Integer;
 begin
-  tsSensorsChoice.Show;
+  if sensorCount > 0 then
+  begin
+    ShowMessage('Моделирование уже запущено! Сначала остановите моделирование.');
+    exit;
+  end;
+
+  dm.qTemp.close;
+  dm.qTemp.SQL.Text := 'Select * From Model';
+  dm.qTemp.Open;
+
+  sensorCount := dm.qTemp.RecordCount;
+
+  setlength(datchiki, sensorCount);
+
+  for i:= 1 to sensorCount do
+  begin
+      dm.qTemp.RecNo := i;
+
+      datchiki[i] :=TDatchik.Create(true);
+      datchiki[i].FreeOnTerminate:=true;
+      datchiki[i].Priority:=tpLowest;
+      datchiki[i].id_datchika := dm.qTemp.FieldByName('ID_datchik').AsInteger;
+      datchiki[i].pokazanie := dm.qTemp.FieldByName('Pokazanie').AsInteger;
+      datchiki[i].mx := dm.qTemp.FieldByName('Mx').AsFloat;
+      datchiki[i].dx := dm.qTemp.FieldByName('Dx').AsFloat;
+      datchiki[i].status := dm.qTemp.FieldByName('Active').AsVariant;
+      datchiki[i].nomerEdit := dm.qTemp.FieldByName('NomerEdit').AsInteger;
+
+       if datchiki[i].status then
+       begin
+          TEdit(FindComponent('Edit'+IntToStr(datchiki[i].nomerEdit))).Color := clLime;
+          TEdit(FindComponent('Edit'+IntToStr(datchiki[i].nomerEdit))).Visible := true;
+          datchiki[i].Resume;
+       end
+          else
+       begin
+          TEdit(FindComponent('Edit'+ IntToStr(datchiki[i].nomerEdit))).Visible := false;
+       end;
+  end;
+
+  tsSchema.Show;
+end;
+
+procedure TfrmMain.N4Click(Sender: TObject);
+var i :integer;
+begin
+  if sensorCount > 0 then
+  begin
+    for i := 1 to sensorCount do
+    begin
+      TEdit(FindComponent('Edit'+ IntToStr(datchiki[i].nomerEdit))).Visible := false;
+      datchiki[i].Terminate;
+    end;
+    sensorCount := -1;
+    datchiki := nil;
+  end;
 end;
 
 procedure TfrmMain.N5Click(Sender: TObject);
 begin
   Application.Terminate;
-end;
-
-procedure TfrmMain.N6Click(Sender: TObject);
-begin
-  tsSchema.Show;
 end;
 
 end.
