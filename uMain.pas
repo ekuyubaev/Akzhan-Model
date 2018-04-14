@@ -36,6 +36,8 @@ type
     DBCheckBoxEh1: TDBCheckBoxEh;
     Label5: TLabel;
     DBEditEh4: TDBEditEh;
+    Edit3: TEdit;
+    Edit4: TEdit;
     procedure N5Click(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure N3Click(Sender: TObject);
@@ -99,7 +101,7 @@ begin
       datchiki[i].FreeOnTerminate:=true;
       datchiki[i].Priority:=tpLowest;
       datchiki[i].id_datchika := dm.qTemp.FieldByName('ID_datchik').AsInteger;
-      datchiki[i].pokazanie := dm.qTemp.FieldByName('Pokazanie').AsInteger;
+      datchiki[i].pokazanie := dm.qTemp.FieldByName('Pokazanie').AsFloat;
       datchiki[i].mx := dm.qTemp.FieldByName('Mx').AsFloat;
       datchiki[i].dx := dm.qTemp.FieldByName('Dx').AsFloat;
       datchiki[i].status := dm.qTemp.FieldByName('Active').AsVariant;

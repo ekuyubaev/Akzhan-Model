@@ -31,7 +31,6 @@ type
   end;
 
 
-
 implementation
 
 uses uDM, uMain, math;
@@ -40,6 +39,10 @@ Procedure TDatchik.show_pokazanie;
 begin
   with frmMain do
       TEdit(FindComponent('Edit'+IntToStr(nomerEdit))).Text := FloatToStrF(fPokazanie, fffixed, 6, 2);
+  dm.qTemp.SQL.Text := 'Update Model set Pokazanie = '
+                      + StringReplace(FloatToStrF(fPokazanie, fffixed, 10, 4), ',', '.', [ rfReplaceAll, rfIgnoreCase ])
+                      + ' Where ID_datchik =' + IntToStr(fID_datchik);
+  dm.qTemp.ExecSQL;
 end;
 
 

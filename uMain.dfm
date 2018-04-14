@@ -30,8 +30,6 @@ object frmMain: TfrmMain
     TabOrder = 0
     object tsParameters: TTabSheet
       Caption = #1055#1072#1088#1072#1084#1077#1090#1088#1099' '#1084#1086#1076#1077#1083#1080#1088#1086#1074#1072#1085#1080#1103
-      ExplicitWidth = 802
-      ExplicitHeight = 554
       object GroupBox1: TGroupBox
         Left = 0
         Top = 0
@@ -46,7 +44,6 @@ object frmMain: TfrmMain
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 0
-        ExplicitWidth = 802
         object DBGridEh1: TDBGridEh
           Left = 2
           Top = 15
@@ -229,8 +226,6 @@ object frmMain: TfrmMain
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 1
-        ExplicitWidth = 802
-        ExplicitHeight = 233
         object Label1: TLabel
           Left = 24
           Top = 32
@@ -347,6 +342,7 @@ object frmMain: TfrmMain
           Width = 97
           Height = 17
           Caption = #1040#1050#1058#1048#1042#1045#1053
+          Checked = True
           DataField = 'Active'
           DataSource = dm.dsParameter
           DynProps = <>
@@ -378,8 +374,6 @@ object frmMain: TfrmMain
     object tsSchema: TTabSheet
       Caption = #1058#1077#1093#1085#1086#1083#1086#1075#1080#1095#1077#1089#1082#1072#1103' '#1089#1093#1077#1084#1072
       ImageIndex = 2
-      ExplicitWidth = 802
-      ExplicitHeight = 554
       DesignSize = (
         846
         609)
@@ -2003,10 +1997,10 @@ object frmMain: TfrmMain
         ExplicitHeight = 105
       end
       object Edit1: TEdit
-        Left = 126
-        Top = 321
-        Width = 38
-        Height = 18
+        Left = 278
+        Top = 323
+        Width = 36
+        Height = 14
         Anchors = [akLeft, akRight, akBottom]
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -2020,8 +2014,8 @@ object frmMain: TfrmMain
       object Edit2: TEdit
         Left = 339
         Top = 278
-        Width = 38
-        Height = 18
+        Width = 36
+        Height = 14
         Anchors = [akLeft, akRight, akBottom]
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -2031,6 +2025,34 @@ object frmMain: TfrmMain
         ParentFont = False
         TabOrder = 1
         Text = 'Edit2'
+      end
+      object Edit3: TEdit
+        Left = 128
+        Top = 323
+        Width = 36
+        Height = 14
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -9
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 2
+        Text = 'Edit3'
+      end
+      object Edit4: TEdit
+        Left = 187
+        Top = 261
+        Width = 57
+        Height = 14
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -9
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 3
+        Text = 'Edit4'
       end
     end
   end
