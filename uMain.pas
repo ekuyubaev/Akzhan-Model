@@ -18,8 +18,6 @@ type
     N5: TMenuItem;
     PageControl1: TPageControl;
     tsParameters: TTabSheet;
-    tsSchema: TTabSheet;
-    Image1: TImage;
     GroupBox1: TGroupBox;
     GroupBox2: TGroupBox;
     Label1: TLabel;
@@ -28,16 +26,12 @@ type
     DBEditEh1: TDBEditEh;
     DBEditEh2: TDBEditEh;
     DBMemoEh1: TDBMemoEh;
-    Edit1: TEdit;
     Label4: TLabel;
     DBEditEh3: TDBEditEh;
-    Edit2: TEdit;
     DBGridEh1: TDBGridEh;
     DBCheckBoxEh1: TDBCheckBoxEh;
     Label5: TLabel;
     DBEditEh4: TDBEditEh;
-    Edit3: TEdit;
-    Edit4: TEdit;
     procedure N5Click(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure N3Click(Sender: TObject);
@@ -64,10 +58,6 @@ var datchiki: array of TDatchik;
 
 procedure TfrmMain.FormActivate(Sender: TObject);
 begin
-  Edit1.Visible := false;
-  Edit2.Visible := false;
-
-  tsSchema.Show;
   dm.connect;
 end;
 
@@ -97,29 +87,20 @@ begin
   begin
       dm.qTemp.RecNo := i;
 
-      datchiki[i] :=TDatchik.Create(true);
-      datchiki[i].FreeOnTerminate:=true;
-      datchiki[i].Priority:=tpLowest;
-      datchiki[i].id_datchika := dm.qTemp.FieldByName('ID_datchik').AsInteger;
-      datchiki[i].pokazanie := dm.qTemp.FieldByName('Pokazanie').AsFloat;
-      datchiki[i].mx := dm.qTemp.FieldByName('Mx').AsFloat;
-      datchiki[i].dx := dm.qTemp.FieldByName('Dx').AsFloat;
-      datchiki[i].status := dm.qTemp.FieldByName('Active').AsVariant;
-      datchiki[i].nomerEdit := dm.qTemp.FieldByName('NomerEdit').AsInteger;
+      datchiki[i-1] :=TDatchik.Create(true);
+      datchiki[i-1].FreeOnTerminate:=true;
+      datchiki[i-1].Priority:=tpLowest;
+      datchiki[i-1].id_datchika := dm.qTemp.FieldByName('ID_datchik').AsInteger;
+      datchiki[i-1].pokazanie := dm.qTemp.FieldByName('Pokazanie').AsFloat;
+      datchiki[i-1].mx := dm.qTemp.FieldByName('Mx').AsFloat;
+      datchiki[i-1].dx := dm.qTemp.FieldByName('Dx').AsFloat;
+      datchiki[i-1].status := dm.qTemp.FieldByName('Active').AsVariant;
 
-       if datchiki[i].status then
-       begin
-          TEdit(FindComponent('Edit'+IntToStr(datchiki[i].nomerEdit))).Color := clLime;
-          TEdit(FindComponent('Edit'+IntToStr(datchiki[i].nomerEdit))).Visible := true;
-          datchiki[i].Resume;
-       end
-          else
-       begin
-          TEdit(FindComponent('Edit'+ IntToStr(datchiki[i].nomerEdit))).Visible := false;
-       end;
+       if datchiki[i-1].status then
+          datchiki[i-1].Resume;
   end;
 
-  tsSchema.Show;
+  self.Caption := 'Моделирование показаний датчиков - [ЗАПУЩЕНО]';
 end;
 
 procedure TfrmMain.N4Click(Sender: TObject);
@@ -128,13 +109,12 @@ begin
   if sensorCount > 0 then
   begin
     for i := 1 to sensorCount do
-    begin
-      TEdit(FindComponent('Edit'+ IntToStr(datchiki[i].nomerEdit))).Visible := false;
-      datchiki[i].Terminate;
-    end;
+      datchiki[i-1].Terminate;
     sensorCount := -1;
     datchiki := nil;
   end;
+
+  self.Caption := 'Моделирование показаний датчиков - [ОСТАНОВЛЕНО]';
 end;
 
 procedure TfrmMain.N5Click(Sender: TObject);

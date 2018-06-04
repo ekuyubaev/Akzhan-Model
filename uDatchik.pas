@@ -14,7 +14,6 @@ type
       fDx:real;
       fPokazanie:real;
       fStatus :boolean;
-      fNomerEdit:integer;
 
     protected
       procedure Execute; override;
@@ -27,7 +26,6 @@ type
       property dx: real Read fDx Write fDx;
       property pokazanie: real Read fPokazanie Write fPokazanie;
       property status: boolean Read fStatus Write fStatus;
-      property nomerEdit: integer Read fNomerEdit Write fNomerEdit;
   end;
 
 
@@ -37,8 +35,6 @@ uses uDM, uMain, math;
 
 Procedure TDatchik.show_pokazanie;
 begin
-  with frmMain do
-      TEdit(FindComponent('Edit'+IntToStr(nomerEdit))).Text := FloatToStrF(fPokazanie, fffixed, 6, 2);
   dm.qTemp.SQL.Text := 'Update Model set Pokazanie = '
                       + StringReplace(FloatToStrF(fPokazanie, fffixed, 10, 4), ',', '.', [ rfReplaceAll, rfIgnoreCase ])
                       + ' Where ID_datchik =' + IntToStr(fID_datchik);

@@ -6,15 +6,14 @@ object dm: Tdm
     Connected = True
     ConnectionString = 
       'Provider=MSDASQL.1;Password=gdx4852T;Persist Security Info=True;' +
-      'User ID=root;Extended Properties="Driver=MySQL ODBC 5.3 Unicode ' +
-      'Driver;SERVER=localhost;UID=root;PWD=gdx4852T;DATABASE=db_cppn;P' +
-      'ORT=3306;COLUMN_SIZE_S32=1";Initial Catalog=db_cppn'
+      'User ID=root;Extended Properties="DRIVER={MySQL ODBC 5.3 Unicode' +
+      ' Driver};UID=root;PWD=gdx4852T;SERVER=localhost;DATABASE=db_cppn' +
+      ';PORT=3306;COLUMN_SIZE_S32=1;";Initial Catalog=db_cppn;OPTION=2'
     LoginPrompt = False
     Left = 24
     Top = 16
   end
   object qSensor: TADOQuery
-    Active = True
     Connection = DB_GATE
     CursorType = ctStatic
     Parameters = <>
@@ -29,7 +28,6 @@ object dm: Tdm
     Top = 16
   end
   object qParameter: TADOQuery
-    Active = True
     Connection = DB_GATE
     CursorType = ctStatic
     DataSource = dsSensor
@@ -56,12 +54,15 @@ object dm: Tdm
     end
     object qParameterMx: TFloatField
       FieldName = 'Mx'
+      DisplayFormat = '#,####0.0000'
     end
     object qParameterDx: TFloatField
       FieldName = 'Dx'
+      DisplayFormat = '#,####0.0000'
     end
     object qParameterPokazanie: TFloatField
       FieldName = 'Pokazanie'
+      DisplayFormat = '#,####0.0000'
     end
     object qParameterPrimechanie: TWideMemoField
       FieldName = 'Primechanie'
