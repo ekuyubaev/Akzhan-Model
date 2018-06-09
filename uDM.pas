@@ -21,6 +21,17 @@ type
     qParameterNomerEdit: TIntegerField;
     qTemp: TADOQuery;
     qParameterActive: TSmallintField;
+    qObject: TADOQuery;
+    qSensorID_datchik: TAutoIncField;
+    qSensorID_object: TIntegerField;
+    qSensorNaimenovanie: TWideStringField;
+    qSensorOboznachenie: TWideStringField;
+    qSensorNomer: TWideStringField;
+    qSensorMAX: TFloatField;
+    qSensorMIN: TFloatField;
+    qSensorID_sostoianie: TIntegerField;
+    qSensorPrimechanie: TWideMemoField;
+    qSensorObject: TStringField;
   private
     { Private declarations }
   public
@@ -41,6 +52,7 @@ begin
   if not DB_GATE.Connected then DB_GATE.Open('root','gdx4852T');
   if not qSensor.Active then qSensor.Open;
   if not qParameter.Active then qParameter.Open;
+  if not qObject.Active then qObject.Open;
 end;
 
 end.

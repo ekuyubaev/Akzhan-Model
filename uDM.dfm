@@ -21,6 +21,48 @@ object dm: Tdm
       'Select * From Datchik')
     Left = 112
     Top = 16
+    object qSensorID_datchik: TAutoIncField
+      FieldName = 'ID_datchik'
+      ReadOnly = True
+    end
+    object qSensorID_object: TIntegerField
+      FieldName = 'ID_object'
+    end
+    object qSensorNaimenovanie: TWideStringField
+      FieldName = 'Naimenovanie'
+      Size = 256
+    end
+    object qSensorOboznachenie: TWideStringField
+      FieldName = 'Oboznachenie'
+      Size = 64
+    end
+    object qSensorNomer: TWideStringField
+      FieldName = 'Nomer'
+      Size = 64
+    end
+    object qSensorMAX: TFloatField
+      FieldName = 'MAX'
+    end
+    object qSensorMIN: TFloatField
+      FieldName = 'MIN'
+    end
+    object qSensorID_sostoianie: TIntegerField
+      FieldName = 'ID_sostoianie'
+    end
+    object qSensorPrimechanie: TWideMemoField
+      FieldName = 'Primechanie'
+      BlobType = ftWideMemo
+    end
+    object qSensorObject: TStringField
+      FieldKind = fkLookup
+      FieldName = 'Object'
+      LookupDataSet = qObject
+      LookupKeyFields = 'ID_object'
+      LookupResultField = 'Naimenovanie'
+      KeyFields = 'ID_object'
+      Size = 256
+      Lookup = True
+    end
   end
   object dsSensor: TDataSource
     DataSet = qSensor
@@ -84,6 +126,17 @@ object dm: Tdm
     Connection = DB_GATE
     Parameters = <>
     Left = 112
+    Top = 128
+  end
+  object qObject: TADOQuery
+    Active = True
+    Connection = DB_GATE
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'Select *'
+      'From Object')
+    Left = 176
     Top = 128
   end
 end
